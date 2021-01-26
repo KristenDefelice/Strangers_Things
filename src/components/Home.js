@@ -1,3 +1,5 @@
+import React from 'react'
+//import react and components
 //stranger's things as the header
 //Home Post Login
 //Login as h1
