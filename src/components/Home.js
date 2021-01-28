@@ -1,4 +1,12 @@
 import React from 'react'
+
+
+const Home = () => {
+   
+    
+}
+
+
 //import react and components
 //stranger's things as the header
 //Home Post Login
@@ -7,3 +15,5 @@ import React from 'react'
 //password to type in
 //log in button
 //dont have an account sign up link
+
+export default Home;
