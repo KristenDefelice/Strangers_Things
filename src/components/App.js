@@ -1,3 +1,4 @@
+import React from "react";
 import { 
     BrowserRouter as Router,
     Link, 
@@ -33,9 +34,6 @@ return (
           </li>
         </ul>
       </nav>
-      <Route path="/home">
-        <Home />
-      </Route>
       <Route path="/post">
         <Post />
       </Route>
@@ -44,6 +42,9 @@ return (
       </Route>
       <Route path="/log">
         <Log />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </div>
   </Router>
