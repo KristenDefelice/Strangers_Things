@@ -2,7 +2,8 @@ import React from "react";
 import { 
     BrowserRouter as Router,
     Link, 
-    Route
+    Route,
+    Switch
 } from "react-router-dom";
 
 
@@ -19,7 +20,10 @@ return (
   <Router>
     <div>
       <nav>
-        <ul>
+      <header>
+        <h1 className="stranger">Stranger's Things</h1>
+      </header >
+        <ul className="nav">
           <li>
             <Link to="/home">Home</Link>
           </li>
@@ -34,18 +38,23 @@ return (
           </li>
         </ul>
       </nav>
-      <Route path="/post">
+      <Switch>
+      <Route exact path="/post">
         <Post />
       </Route>
-      <Route path="/profile">
+      <Route exact path="/profile">
         <Profile />
       </Route>
-      <Route path="/log">
+      <Route exact path="/log">
+        <Log />
+      </Route>
+      <Route exact path="/register">
         <Log />
       </Route>
       <Route path="/">
         <Home />
       </Route>
+      </Switch>
     </div>
   </Router>
 );
