@@ -53,7 +53,7 @@ return (
         <Log />
       </Route>
       <Route exact path="/register">
-        <Log />
+        <Register />
       </Route>
       <Route path="/">
         <Home />
