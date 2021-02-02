@@ -1,9 +1,36 @@
-import React from 'react'
+import {React, useState} from 'react'
+import {Redirect} from 'react-router-dom'
+import { Register } from './Register'
+import Log from './Log'
 
 
-const Home = () => {
-   
-    
+const Home = ({setAuthentication}) => {
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+    const [submitSuccessful, setSubmitSuccessful] = useState(false)
+
+    function registerPage() {
+        <Redirect to="./register" />
+    }
+
+    function authenticate(event) {
+        event.preventDefault()
+        if (username && password){
+            setUsername(username)
+            setPassword(password)
+            setAuthentication(true)
+            setSubmitSuccessful(true)
+        }
+    }
+    if (submitSuccessful){
+        return <Redirect to="/" />;
+    }
+    return (
+        <div>
+            <Log authenticate={authenticate()} register={registerPage()} />
+            <Register />
+        </div>   
+        )
 }
 
 
