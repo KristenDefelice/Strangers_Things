@@ -6,6 +6,21 @@ import React from 'react'
 //can click on post and delete or edit it
 
 const Profile = () => {
+//     <select
+//           name=“classification”
+//           id=“select-classification”
+//           value={classification}
+//           onChange={(event) => setClassification(event.target.value)}
+//         >
+//           <option value=“any”>Any</option>
+//           {classificationList.map((classification, index) => {
+//             return (
+//               <option key={index} value={classification.name}>
+//                 {classification.name}
+//               </option>
+//             );
+//           
+
     const messages = () => {
         fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
             headers: {
@@ -20,7 +35,7 @@ const Profile = () => {
     }
     return ( <div>
         <h1>Welcome </h1>
-        <h3 messages={messages}>Messages to me: </h3>
+        <h3>Messages to me: {() => messages}</h3>
         <h3>Messages from me:</h3>
     </div>)
 }
