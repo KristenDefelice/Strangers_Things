@@ -1,5 +1,6 @@
 import {React, useState} from 'react'
 import {Redirect} from 'react-router-dom'
+import { Register } from './Register'
 import Log from './Log'
 
 
@@ -8,8 +9,8 @@ const Home = ({setAuthentication}) => {
     const [password, setPassword] = useState()
     const [submitSuccessful, setSubmitSuccessful] = useState(false)
 
-    function register() {
-        <Redirect to="/register" />
+    function registerPage() {
+        <Redirect to="./register" />
     }
 
     function authenticate(event) {
@@ -26,7 +27,8 @@ const Home = ({setAuthentication}) => {
     }
     return (
         <div>
-            <Log authenticate={authenticate} register={register} />
+            <Log authenticate={authenticate()} register={registerPage()} />
+            <Register />
         </div>   
         )
 }

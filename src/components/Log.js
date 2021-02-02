@@ -1,10 +1,12 @@
-import {React, useEffect} from 'react'
+import {React, useState} from 'react'
 
 
-const Log = ({authenticate, register}) => {
-    const username = document.getElementById("username")
-    const password = document.getElementById("password")
-    useEffect (() => {
+const Log = () => {
+    const [username, setUsername] = useState()
+    const [password, setPassword] = useState()
+    // const username = document.getElementById("username")
+    // const password = document.getElementById("password")
+    const signIn = () => {
         fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/login', {
             method: "POST",
             headers: {
@@ -21,21 +23,21 @@ const Log = ({authenticate, register}) => {
               console.log(result);
             })
             .catch(console.error);
-    })
+    }
     return (
     <div>
         <h1 className="logIn">Log In</h1>
-        <form className="username" onSubmit={authenticate}>
+        <form className="username">
             <label>Username</label>
-            <input type="text" id="username"/>
+            <input type="text" id="username" onChange={(event) => setUsername(event.target.value) }/>
         </form>
         <form className="password">
             <label>Password</label>
-            <input type="text" id="password"/>
+            <input type="text" id="password" onChange={(event) => setPassword(event.target.value) }/>
         </form>
         <div className="buttons">
-            <button className="submit">Submit</button>
-            <button className="register" onClick={register}>Register</button>
+            <button className="submit" onClick={ () => signIn()}>Submit</button>
+            <button className="register">Register</button>
         </div>
     </div>)
 }

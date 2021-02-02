@@ -11,6 +11,7 @@ import Home from './Home';
 import Post from './Post';
 import Profile from './Profile';
 import Log from "./Log";
+import Register from "./Register";
 
 
 
@@ -35,6 +36,9 @@ return (
           </li>
           <li>
             <Link to="/log">Log In</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </nav>
