@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 import {Redirect} from 'react-router-dom'
-// import Register from './Register'
+// import { withAlert } from 'react-alert'
 import Log from './Log'
 
 
@@ -17,7 +17,7 @@ const Home = ({setAuthentication}) => {
             setPassword(event.target.value)
             setAuthentication(true)
             setSubmitSuccessful(true)
-        return alert("Welcome {username} ")
+        // return alert.show("Welcome {username} ")
         }
     }
     if (submitSuccessful){
