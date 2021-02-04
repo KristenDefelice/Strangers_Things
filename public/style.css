@@ -1,0 +1,28 @@
+.nav{
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    font-size: 20px;
+    background-color: lightblue;
+    padding: 10px;
+}
+.stranger{
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    font-size: 50px; 
+    background-color: lightslategray;
+}
+.logIn, .password, .username, .register, .buttons{
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+    padding: 5px;
+}
+.submit{
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+    margin-right: 10px;
+    padding: 5px;
+}
