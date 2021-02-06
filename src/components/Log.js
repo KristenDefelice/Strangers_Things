@@ -1,6 +1,8 @@
 import {React, useState} from 'react'
 // import {Redirect} from 'react-router-dom'
 import {Link} from "react-router-dom";
+import { Redirect } from 'react-router'
+import Home from './Home';
 
 
 
@@ -30,6 +32,9 @@ const Log = () => {
             })
             .catch(console.error);
     }
+    // const homePage = () => {
+    //     return <Home />
+    // }
     return (
     <form onSubmit={signIn}>
         <h1 className="logIn">Log In</h1>

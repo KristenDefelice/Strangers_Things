@@ -41,7 +41,6 @@ const Profile = () => {
                 <h3> {message.fromUser.username}</h3>
                 <p> {message.content}</p>
                 {message.isAuthor ? <div><button>Edit</button><button>Delete</button></div>:null}
-                <Link className="linkButton" to="/newMessage">Create New Message</Link>
                 </div>})}
             </div>
     </div>)

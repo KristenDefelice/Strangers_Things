@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function NewMessage() {
+const NewMessage = () => {
     const profileToken = localStorage.getItem("token")
     const [content, setContent] = useState('')
     const [title, setTitle] = useState('')
