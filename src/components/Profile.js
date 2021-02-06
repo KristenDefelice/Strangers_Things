@@ -1,36 +1,49 @@
 import React, { useEffect, useState} from 'react'
-//welcome username
-//messages to me
-//messages from me
-//same header as home
-//can click on post and delete or edit it
+import {Link} from "react-router-dom";
 
-const Profile = (result, messages) => {
-    const [token, setToken] = useState('')
-    const [message, setMessage] = useState('')
-    const [user, setUser] = useState('')
+const Profile = () => {
+    const [data, setData] = useState([])
 
     const profileToken = localStorage.getItem("token")
-    useEffect (() => { fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
+    const getMessage = () => {
+        fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
             headers: {
               'Content-Type':'application/json',
               'Authorization':'Bearer ' + profileToken
             },
             }).then(response => response.json())
-            .then(result => setToken(result.data.token))
+            .then(response => setData(response.data))
+            // .then(console.log(response))
+            .then(console.log(data))
             .catch(console.error);
-        },[profileToken])
+    }
+    useEffect (() => { 
+        // // fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/me', {
+        //     headers: {
+        //       'Content-Type':'application/json',
+        //       'Authorization':'Bearer ' + profileToken
+        // //     },
+        //     }).then(response => response.json())
+        //     .then(response => setData(response.data))
+        //     // .then(console.log(response))
+        //     .then(console.log(data))
+        //     .catch(console.error);
+            getMessage();
+        })
     return ( <div>
-        <h1>Welcome setUser={setUser(username)}</h1> 
-        <h3>Messages to me:</h3>
-            <div>
-            {  messages.map((message, index) => {
-        return <div key={ index }>
-                {result.data.message}
-                <button>Edit</button><button>Delete</button>
-            </div>})}
+        <h1 className="messages">Messages</h1>
+            <div className="messageList">
+            {  data.messages && data.messages.map((message, index) => {
+                console.log(message)
+                return <div key={ index }>
+                    <hr/>
+                <h2> {message.post.title}</h2>
+                <h3> {message.fromUser.username}</h3>
+                <p> {message.content}</p>
+                {message.isAuthor ? <div><button>Edit</button><button>Delete</button></div>:null}
+                <Link className="linkButton" to="/newMessage">Create New Message</Link>
+                </div>})}
             </div>
-        <h3>Messages from me:</h3>
     </div>)
 }
 

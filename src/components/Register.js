@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {React, useState} from 'react';
 
 
 const Register = () => {
@@ -38,7 +38,6 @@ const Register = () => {
         </div>
         <div className="buttons">
             <button className="submit" type="submit" >Submit</button>
-            {/* <button className="register">Register</button> */}
         </div>
     </form>)
 }

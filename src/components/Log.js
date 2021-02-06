@@ -1,14 +1,13 @@
 import {React, useState} from 'react'
-import {Redirect} from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
+import {Link} from "react-router-dom";
+
 
 
 const Log = () => {
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
 
-    function registerPage() {
-        <Redirect to="./register" />
-    }
 
 //local storage for token function check if their loged in if token is stored in local storage 
     const signIn = (event) => {
@@ -40,11 +39,11 @@ const Log = () => {
         </div>
         <div className="password">
             <label>Password: </label>
-            <input type="text" id="password" onChange={(event) => setPassword(event.target.value) }/>
+            <input type="password" id="password" onChange={(event) => setPassword(event.target.value) }/>
         </div>
         <div className="buttons">
             <button className="submit" type="submit">Submit</button>
-            <button className="register"  onClick={() => registerPage()} >Register</button>
+            <Link className="linkButton" to="/register">Register</Link>
         </div>
     </form>)
 }
