@@ -1,12 +1,13 @@
-import React from 'react'
+import {React, useState} from 'react'
 // import {Redirect} from 'react-router-dom'
-// import Log from './Log'
+import Log from './Log'
 
 const Home = () => {
+    const [username, setUsername] = useState()
     return (
         <div>
     <h1>Welcome to Stranger's Things!</h1>
-    <h2>You are logged in as username</h2>
+    <h2>You are logged in as {username}</h2>
     </div>)
 }
 

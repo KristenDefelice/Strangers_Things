@@ -74,7 +74,7 @@ const Post = () => {
             },
             body: JSON.stringify({
               message: {
-                content
+                content:NewMessage()
               }
             })
           }).then(response => response.json())
@@ -83,6 +83,12 @@ const Post = () => {
             })
             .catch(console.error);
     }
+
+    // const buttonClicked = (event, post) => {
+    //     event.preventDefault()
+    //     post.document.getElementById('button').clicked 
+    //     return true
+    // }
 
     return ( <div>
         <h1 className="posts">Posts </h1> 
@@ -96,8 +102,8 @@ const Post = () => {
                 <p>{post.description}</p>
                 <p>{post.location}</p>
                 <p>{post.price}</p>
-                { post.isAuthor ? <div><div><button onClick={() =>editPost(post)}>Edit</button></div><div><button onClick={() => deletePost(post._id)}>Delete</button></div></div>:null}
-                {/* <button onClick={() => {NewMessage(true) ? }} >Create New Message</button> */}
+                { post.isAuthor ? (<div><div><button onClick={() =>editPost(post)}>Edit</button></div><div><button onClick={() => deletePost(post._id)}>Delete</button></div></div>):null}
+                {/* {<button onClick={buttonClicked ? createMessage(post._id):null}>Create New Message</button>} */}
             </div>})}
             </div>
     </div>)
