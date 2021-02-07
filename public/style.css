@@ -26,3 +26,11 @@
     margin-right: 10px;
     padding: 5px;
 }
+.messageList, .postList {
+    padding: 5px;
+}
+.messages, .posts {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
