@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from 'react'
 import {Link} from "react-router-dom";
 import { useHistory } from 'react-router-dom'
+import NewMessage from './NewMessage';
 
 const Post = ({isLoggedIn}) => {
     let history = useHistory();
@@ -63,39 +64,20 @@ const Post = ({isLoggedIn}) => {
         })
         .catch(console.error);
     }
-    const createMessage = (id) => {
-        buttonClicked()
-        fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${id}/messages`, {
-            method: "POST",
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + profileToken
-            },
-            body: JSON.stringify({
-              message: {
-                content
-              }
-            })
-        }).then(response => response.json())
-            .then(result => {
-              console.log(result)
-              history.push("/NewMessage");
-            })
-            .catch(console.error)
-    }
 
-    const buttonClicked = () => {
-        return (
-            <div className="popup-box">
-               <div className="box">
-                    <div>Create New Message:</div>
-                    <label>Title: </label>
-                    <input type="text" id="text" onChange={(event) => setTitle(event.target.value) }/>  
-                    <input type="button" value="Submit"/>
-                </div>
-            </div>
-        )
-    }
+
+    // const buttonClicked = () => {
+    //     return (
+    //         <div className="popup-box">
+    //            <div className="box">
+    //                 <div>Create New Message:</div>
+    //                 <label>Title: </label>
+    //                 <input type="text" id="text" onChange={(event) => setTitle(event.target.value) }/>  
+    //                 <input type="button" value="Submit"/>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
     return ( <div>
         <h1 className="posts">Posts </h1> 
@@ -110,7 +92,7 @@ const Post = ({isLoggedIn}) => {
                     <p>{post.description}</p>
                     <p>{post.location}</p>
                     <p>{post.price}</p>
-                    {<button onClick={() => createMessage(post._id)}>Create New Message</button>}
+                    {<button onClick={() => <NewMessage postid={post._id}/>}>Create New Message</button>}
                     { post.isAuthor ? (<div><div><button onClick={() =>editPost(post)}>Edit</button></div><div><button onClick={() => deletePost(post._id)}>Delete</button></div></div>):null}
                     </div>})}
                 </div>
