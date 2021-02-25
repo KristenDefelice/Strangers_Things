@@ -17,17 +17,17 @@ export default function Header({isLoggedIn}) {
                         <li>
                             <Link to="/register">Register</Link>
                         </li>
-                        </React.Fragment> }
-                    {isLoggedIn &&
-                        <React.Fragment>
-                        <li>
-                            <Link to="/home">Home</Link>
-                        </li>
                         <li>
                             <Link to="/post">Post</Link>
                         </li>
                         <li>
                             <Link to="/profile">Profile</Link>
+                        </li>
+                        </React.Fragment> }
+                    {isLoggedIn &&
+                        <React.Fragment>
+                        <li>
+                            <Link to="/home">Home</Link>
                         </li>
                         <li>
                             <Link to="/logout">Log Out</Link>
