@@ -30,29 +30,23 @@ function AddPost() {
         <form>
            <div>
                 <div>Create New Post:</div>
-            <label>Title: </label>
-            <input type="text" id="text" onChange={(event) => setTitle(event.target.value) }/>  
-            </div>
-            <div>
-            <label>Description: </label>
-            <input type="text" id="text" onChange={(event) => setDescription(event.target.value) }/>  
-            </div>  
-            <div>
-            <label>Price: </label>
-            <input type="text" id="text" onChange={(event) => setPrice(event.target.value) }/>  
-            </div>
-            <div>
-            {/* <label>Delivery: </label> checkbox */}
-            <input type="button" onClick={() => createPost()} value="Submit"/>
+                    <label>Title: </label>
+                    <input type="text" id="text" onChange={(event) => setTitle(event.target.value) }/>  
+                </div>
+                <div>
+                    <label>Description: </label>
+                    <input type="text" id="text" onChange={(event) => setDescription(event.target.value) }/>  
+                </div>  
+                <div>
+                    <label>Price: </label>
+                    <input type="text" id="text" onChange={(event) => setPrice(event.target.value) }/>  
+                </div>
+                <div>
+                    <input type="button" onClick={() => createPost()} value="Submit"/>
             </div>
         </form>
     )
 }
 export default AddPost;
 
-//create post form
-// create title desc price del
-//create hooks for inputs above
-//create onsubmit function for the form instead of useeffect 
-//redirect on success like an alert
 

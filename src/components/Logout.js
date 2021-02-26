@@ -1,15 +1,16 @@
-import {React, useState} from "react";
+import {React} from "react";
+import { useHistory } from 'react-router-dom'
 
-const Logout = () => {
-    const [token, setToken] = useState('')
+const Logout = ({setIsLoggedIn}) => {
+    let history = useHistory();
     const logOut = () => {
-        setToken(null)
+        localStorage.setItem("token", '')
+        setIsLoggedIn(false)
+        history.push("/Log")
     }
-    console.log(token)
-return <div>
-    <button onClick={logOut}>Log Out</button>
-   
-</div>
+    return <div className="logout">
+                <button onClick={logOut}>Log Out</button>
+            </div>
 }
 
 export default Logout;

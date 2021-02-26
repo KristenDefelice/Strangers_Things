@@ -19,7 +19,7 @@
     justify-content: center;  
     padding: 5px;
 }
-.submit{
+.submit, .logged{
     display: flex;
     text-align: center;
     justify-content: center;  
@@ -29,7 +29,7 @@
 .messageList, .postList {
     padding: 5px;
 }
-.messages, .posts {
+.messages, .posts, .home, .logout {
     display: flex;
     text-align: center;
     justify-content: center;
