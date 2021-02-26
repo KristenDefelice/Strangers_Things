@@ -25,12 +25,4 @@
     justify-content: center;  
     margin-right: 10px;
     padding: 5px;
-}
-.messageList, .postList {
-    padding: 5px;
-}
-.messages, .posts, .home, .logout {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
+

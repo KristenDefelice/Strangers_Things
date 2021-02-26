@@ -10,7 +10,7 @@ const Register = () => {
         fetch('https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/register', {
             method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               user: {
@@ -22,8 +22,9 @@ const Register = () => {
             .then(result => {
               setToken(result.data.token)
             })
-            .catch(console.error);
-    }
+
+            .catch(console.error);}
+
     return (
     <form onSubmit={signUp}>
         <h1 className="logIn">Sign Up</h1>
