@@ -1,6 +1,6 @@
 import {React, useState} from 'react'
 import {Redirect} from 'react-router-dom'
-import { Register } from './Register'
+import  Register  from './Register'
 import Log from './Log'
 
 
@@ -13,8 +13,7 @@ const Home = ({setAuthentication}) => {
         <Redirect to="./register" />
     }
 
-    function authenticate(event) {
-        event.preventDefault()
+    function authenticate() {
         if (username && password){
             setUsername(username)
             setPassword(password)

@@ -28,11 +28,11 @@ const Log = () => {
     <div>
         <h1 className="logIn">Log In</h1>
         <form className="username">
-            <label>Username</label>
-            <input type="text" id="username" onChange={(event) => setUsername(event.target.value) }/>
+            <label>Username: </label>
+            <input type="text" id="username" onChange={(event) => setUsername(event.target.value)}/>
         </form>
         <form className="password">
-            <label>Password</label>
+            <label>Password:</label>
             <input type="text" id="password" onChange={(event) => setPassword(event.target.value) }/>
         </form>
         <div className="buttons">

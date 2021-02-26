@@ -35,9 +35,6 @@ return (
             <Link to="/profile">Profile</Link>
           </li>
           <li>
-            <Link to="/log">Log In</Link>
-          </li>
-          <li>
             <Link to="/register">Register</Link>
           </li>
         </ul>

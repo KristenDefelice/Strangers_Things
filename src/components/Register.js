@@ -8,22 +8,26 @@ const Register = () => {
     // const username = document.getElementById("username")
     // const password = document.getElementById("password")
     const signUp = () => {
-        fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/users/register', {
+        fetch(
+          "https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/users/register",
+          {
             method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
             body: JSON.stringify({
               user: {
                 username: username,
-                password: password
-              }
-            })
-          }).then(response => response.json())
-            .then(result => {
-              console.log(result);
-            })
-            .catch(console.error);}
+                password: password,
+              },
+            }),
+          }
+        )
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result);
+          })
+          .catch(console.error);}
     return (
     <div>
         <h1 className="logIn">Log In</h1>
