@@ -25,5 +25,16 @@
     justify-content: center;  
     margin-right: 10px;
     padding: 5px;
+<<<<<<< HEAD
     padding-left: 10px;
+=======
+}
+.messageList, .postList {
+    padding: 5px;
+}
+.messages, .posts {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+>>>>>>> 263d650a99e171c14ebc3ed7e3ba90be6575cef1
 }
