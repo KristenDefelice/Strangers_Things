@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 const Logout = ({setIsLoggedIn}) => {
     let history = useHistory();
     const logOut = () => {
-        localStorage.setItem("token", '')
+        localStorage.removeItem("token")
         setIsLoggedIn(false)
         history.push("/Log")
     }

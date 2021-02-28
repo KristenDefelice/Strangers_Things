@@ -9,7 +9,6 @@ export default function Header({isLoggedIn}) {
                     <h1 className="stranger">Stranger's Things</h1>
                 </header >
                     <ul className="nav">
-                    {!isLoggedIn && 
                         <React.Fragment>  
                         <li>
                             <Link to="/log">Log In</Link>
@@ -23,8 +22,7 @@ export default function Header({isLoggedIn}) {
                         <li>
                             <Link to="/profile">Profile</Link>
                         </li>
-                        </React.Fragment> }
-                    {isLoggedIn &&
+                        </React.Fragment> 
                         <React.Fragment>
                         <li>
                             <Link to="/home">Home</Link>
@@ -32,7 +30,7 @@ export default function Header({isLoggedIn}) {
                         <li>
                             <Link to="/logout">Log Out</Link>
                         </li>
-                        </React.Fragment>}
+                        </React.Fragment>
                         </ul>
             </nav>
         </div>

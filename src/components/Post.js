@@ -24,9 +24,8 @@ const Post = ({isLoggedIn}) => {
     }
     
     useEffect (() => { 
-        if (isLoggedIn){
             getPosts()}
-    },[profileToken, isLoggedIn])
+    ,[profileToken])
 
     const deletePost = (id) =>{ fetch(`https://strangers-things.herokuapp.com/api/2010-LSU-RM-WEB-PT/posts/${id}`, {
             method: "DELETE",
@@ -81,8 +80,8 @@ const Post = ({isLoggedIn}) => {
 
     return ( <div>
         <h1 className="posts">Posts </h1> 
-        {isLoggedIn && <div>
-            <Link className="linkButton" to="/post/add">Create New Post</Link>
+       
+            {isLoggedIn ? <Link className="linkButton" to="/post/add">Create New Post</Link>:null}
                 <div className="postList">
                 {posts && posts.map((post, index) => {
                 return <div key={ index.id }>
@@ -92,11 +91,10 @@ const Post = ({isLoggedIn}) => {
                     <p>{post.description}</p>
                     <p>{post.location}</p>
                     <p>{post.price}</p>
-                    {<button onClick={() => <NewMessage postid={post._id}/>}>Create New Message</button>}
+                    {isLoggedIn && !post.isAuthor ? <button onClick={() => <NewMessage postid={post._id}/>}>Create New Message</button>:null}
                     { post.isAuthor ? (<div><div><button onClick={() =>editPost(post)}>Edit</button></div><div><button onClick={() => deletePost(post._id)}>Delete</button></div></div>):null}
                     </div>})}
                 </div>
-        </div>}
     </div>)
 }
 
